@@ -1,0 +1,19 @@
+{
+  "name": "HeapBeat - Phòng tự học",
+  "short_name": "HeapBeat",
+  "description": "Hàng đợi phát nhạc cộng đồng cho phòng tự học.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f8f6",
+  "theme_color": "#087f78",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

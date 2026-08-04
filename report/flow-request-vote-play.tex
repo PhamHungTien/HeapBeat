@@ -1,0 +1,47 @@
+\begin{tikzpicture}[
+  >=Stealth,
+  font=\footnotesize\sffamily,
+  flowstep/.style={
+    draw=hbline,
+    rounded corners=2pt,
+    fill=white,
+    minimum width=29mm,
+    minimum height=10mm,
+    align=center
+  },
+  decision/.style={
+    diamond,
+    draw=hbgreen,
+    fill=hbgreen!6,
+    aspect=2.05,
+    minimum width=31mm,
+    minimum height=12mm,
+    align=center,
+    inner sep=1pt
+  },
+  edge/.style={->,line width=0.45pt},
+  answer/.style={font=\scriptsize\sffamily,fill=white,inner sep=1pt}
+]
+\node[flowstep] (request) at (0,0) {Sinh viên\\chọn bài};
+\node[decision] (license) at (3.8,0) {Giấy phép\\hợp lệ?};
+\node[decision] (guard) at (7.7,0) {SpamGuard\\cho phép?};
+\node[flowstep] (heap) at (11.5,0) {Thêm / bình chọn\\heapify};
+
+\node[flowstep] (reject) at (3.8,-2.05) {Từ chối\\ghi nhật ký};
+\node[flowstep] (block) at (7.7,-2.05) {Chặn 30 phút\\thu hồi yêu cầu};
+\node[flowstep] (extract) at (11.5,-2.05) {Quản trị Next\\extractMax};
+
+\node[flowstep] (audit) at (3.8,-4.1) {Nhật ký +\\đồng bộ giao diện};
+\node[flowstep] (history) at (7.7,-4.1) {Phát + addLast\\vào CDLL};
+
+\draw[edge] (request.east) -- (license.west);
+\draw[edge] (license.east) -- node[answer,above]{có} (guard.west);
+\draw[edge] (guard.east) -- node[answer,above]{có} (heap.west);
+\draw[edge] (license.south) -- node[answer,right]{không} (reject.north);
+\draw[edge] (guard.south) -- node[answer,right]{không} (block.north);
+\draw[edge] (heap.south) -- (extract.north);
+\draw[edge] (extract.south) -- ++(0,-5mm) -| (history.east);
+\draw[edge] (history.west) -- (audit.east);
+\draw[edge] (reject.south) -- (audit.north);
+\draw[edge] (block.south) -- ++(0,-5mm) -| (audit.east);
+\end{tikzpicture}

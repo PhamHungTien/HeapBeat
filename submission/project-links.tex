@@ -1,0 +1,147 @@
+% !TEX program = xelatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\setsansfont{SourceSans3-Regular.otf}[
+  BoldFont=SourceSans3-Semibold.otf,
+  ItalicFont=SourceSans3-RegularIt.otf,
+  BoldItalicFont=SourceSans3-SemiboldIt.otf]
+\setmainfont{LibertinusSerif-Regular.otf}[
+  BoldFont=LibertinusSerif-Semibold.otf,
+  ItalicFont=LibertinusSerif-Italic.otf]
+\setmonofont{IBMPlexMono-Regular.otf}[
+  BoldFont=IBMPlexMono-SemiBold.otf,
+  Scale=0.88]
+
+\usepackage[a4paper,left=1.8cm,right=1.8cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tabularx,array}
+\usepackage{qrcode}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\definecolor{hbgreen}{HTML}{087F78}
+\definecolor{hbnavy}{HTML}{173C4A}
+\definecolor{hbink}{HTML}{17211F}
+\definecolor{hbmuted}{HTML}{50615C}
+\definecolor{hbline}{HTML}{DDE5E1}
+\definecolor{hblight}{HTML}{F4F8F6}
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  urlcolor=hbgreen,
+  linkcolor=hbgreen,
+  pdftitle={HeapBeat - Phiếu truy cập dự án},
+  pdfauthor={Nhóm HeapBeat},
+  pdfsubject={Liên kết mã nguồn và bản demo phục vụ chấm đồ án}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=5mm,itemsep=1.5pt,topsep=3pt}
+
+\newtcolorbox{accessbox}[1]{
+  enhanced,
+  colback=hblight,
+  colframe=hbline,
+  boxrule=0.65pt,
+  arc=3mm,
+  left=5mm,right=5mm,top=3.2mm,bottom=3.2mm,
+  title={#1},
+  coltitle=hbnavy,
+  fonttitle=\sffamily\bfseries\normalsize,
+  attach boxed title to top left={xshift=4mm,yshift=-2.5mm},
+  boxed title style={colback=white,colframe=hbline,boxrule=0.65pt,arc=2mm}
+}
+
+\begin{document}
+\sffamily
+
+\begin{tabularx}{\textwidth}{@{}p{1.8cm}X@{}}
+\includegraphics[width=1.45cm]{../report/logo-khtn.png} &
+\begin{minipage}[c]{\linewidth}
+{\small\color{hbnavy}ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH\par}
+{\large\bfseries\color{hbnavy}TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN\par}
+{\small\color{hbmuted}KHOA ĐIỆN TỬ - VIỄN THÔNG\par}
+\end{minipage}
+\end{tabularx}
+
+\vspace{0.42cm}
+\begin{center}
+{\fontsize{27}{31}\selectfont\bfseries\color{hbnavy}HeapBeat\par}
+\vspace{0.06cm}
+{\Large\bfseries\color{hbgreen}Phát nhạc chờ cộng đồng cho phòng tự học\par}
+\vspace{0.05cm}
+{\normalsize\bfseries\color{hbnavy}(COLLABORATIVE DJ QUEUE)\par}
+\vspace{0.18cm}
+{\small\color{hbmuted}Đồ án Cấu trúc dữ liệu và Giải thuật\par}
+\end{center}
+
+\vspace{0.18cm}
+{\small
+Do kích thước mã nguồn và các tệp tài nguyên của dự án tương đối lớn, chúng em
+xin phép gửi liên kết GitHub chính thức thay cho tệp mã nguồn.\par}
+
+\vspace{0.14cm}
+\begin{accessbox}{1. Mã nguồn chính thức trên GitHub}
+\begin{tabularx}{\linewidth}{@{}X p{3.15cm}@{}}
+\begin{minipage}[t]{\linewidth}
+{\small\bfseries\color{hbgreen}KHO MÃ NGUỒN\par}
+\vspace{0.06cm}
+{\normalsize\href{https://github.com/PhamHungTien/HeapBeat}{github.com/PhamHungTien/HeapBeat}\par}
+\vspace{0.14cm}
+{\small
+\begin{itemize}
+  \item Mã nguồn React/TypeScript và backend C11 chính thức.
+  \item README tiếng Anh, hướng dẫn cài đặt, kiểm thử và tái lập kết quả.
+  \item Báo cáo, slide, lịch sử commit và giấy phép MIT.
+\end{itemize}}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\centering
+\href{https://github.com/PhamHungTien/HeapBeat}{%
+  \qrcode[height=2.35cm]{https://github.com/PhamHungTien/HeapBeat}}
+\par\vspace{0.08cm}
+{\scriptsize\bfseries\color{hbgreen}QUÉT ĐỂ MỞ GITHUB\par}
+\end{minipage}
+\end{tabularx}
+\end{accessbox}
+
+\vspace{0.14cm}
+\begin{accessbox}{2. Website chạy thử}
+\begin{tabularx}{\linewidth}{@{}X p{3.15cm}@{}}
+\begin{minipage}[t]{\linewidth}
+{\small\bfseries\color{hbgreen}WEB DEMO\par}
+\vspace{0.06cm}
+{\normalsize\href{https://phamhungtien.synology.me/heapbeat/}{phamhungtien.synology.me/heapbeat/}\par}
+\vspace{0.15cm}
+{\small
+\begin{tabular}{@{}>{\bfseries}p{3.3cm}l@{}}
+Tài khoản quản trị: & \texttt{admin}\\
+Mật khẩu: & \texttt{admin@123}\\
+Tài khoản sinh viên: & Đăng ký trực tiếp trên website\\
+\end{tabular}\par}
+\vspace{0.12cm}
+{\footnotesize\color{hbmuted}
+Sinh viên chọn \textbf{Đăng ký}, nhập thông tin sinh viên và tạo tài khoản trước
+khi gửi yêu cầu hoặc bình chọn bài hát.\par}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\centering
+\href{https://phamhungtien.synology.me/heapbeat/}{%
+  \qrcode[height=2.35cm]{https://phamhungtien.synology.me/heapbeat/}}
+\par\vspace{0.08cm}
+{\scriptsize\bfseries\color{hbgreen}QUÉT ĐỂ MỞ BẢN DEMO\par}
+\end{minipage}
+\end{tabularx}
+\end{accessbox}
+
+\end{document}

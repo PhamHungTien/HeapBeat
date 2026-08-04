@@ -1,0 +1,23 @@
+HEAPBEAT PIANO AUDIO NOTICE
+Version 1.0 - July 2026
+
+HeapBeat bundles 18 piano recordings supplied by the project owner for an
+internal, non-commercial course demonstration. The application preserves the
+performer attribution found in each MP3 file:
+
+- Cà Pháo Pianist
+- Người Nghiện Chơi Đàn
+- Vũ Ngọc Tiến
+- Yuriko Piano
+
+The recordings are piano covers. Possession of an audio file does not by itself
+grant public-performance rights in the underlying composition. Before using
+HeapBeat outside the classroom or on a public speaker system, the deployer must
+verify the recording license, composition rights, attribution requirements, and
+any applicable public-performance license for every track.
+
+HeapBeat does not download audio from Spotify, Apple Music, YouTube, or a remote
+streaming API. Playback uses only the local MP3 files in public/music through
+the browser's native HTMLAudioElement.
+
+Project: HeapBeat - Community Music Queue for Study Rooms

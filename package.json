@@ -1,0 +1,35 @@
+{
+  "name": "heapbeat",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Web app phát nhạc chờ cộng đồng dùng Max-Heap, danh sách liên kết đôi vòng và Hash Map chống spam.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "backend:c": "make -C backend-c",
+    "test:backend:c": "make -C backend-c test",
+    "test:watch": "vitest",
+    "check": "npm run format:check && npm run test && npm run build",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"scripts/**/*.mjs\" \"*.{json,ts}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"scripts/**/*.mjs\" \"*.{json,ts}\"",
+    "release": "node scripts/create-release.mjs",
+    "report": "latexmk -xelatex -interaction=nonstopmode -halt-on-error -cd report/main.tex",
+    "slides": "latexmk -xelatex -interaction=nonstopmode -halt-on-error -cd presentation/slides.tex",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "prettier": "^3.9.5",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4",
+    "vitest": "^3.2.4"
+  }
+}
